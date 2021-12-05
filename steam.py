@@ -120,3 +120,7 @@ pos_rt = st.text_input("Positive ratings", value="1")
 A = scaler.transform([[price,pos_rt]])
 pred = clf.predict(A)
 pred
+
+st.markdown("Dataset source: https://www.kaggle.com/nikdavis/steam-store-games")
+st.markdown("Link to GitHub repository: https://github.com/ningzex2002/Steam-Games")
+st.markdown("Reference: The portion (df[""].astype(str).astype(int)) of the app was taken from [https://stackoverflow.com/questions/39173813/pandas-convert-dtype-object-to-int]")
