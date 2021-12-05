@@ -23,7 +23,7 @@ dev = df["developer"].value_counts().idxmax()
 if guess == dev:
     st.write("You did it! The one who develops the most games is Choice of Games!")
 else:
-    st.write("I'm sorry it's not the correct answer but no worries! The correct answer is: Choice of Games!")
+    st.write("I'm sorry it's not the correct answer but no worries! Try again!")
 
 st.markdown("**Before we go straight into next topic, You can take a look at the release time distribution of the most recent 5000 games(as of the date of dataset creation) on the left!**")
 
