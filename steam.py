@@ -85,6 +85,15 @@ chart1 = alt.Chart(y2019).mark_circle().encode(
 best_fit = chart1+chart1.transform_regression("positive_ratings","average_playtime").mark_line()
 st.write(best_fit)
 
+from sklearn.linear_model import LinearRegression
+model = sklearn.linear_model.LinearRegression()
+X = np.array(y2019["positive_ratings"]).reshape(-1,1)
+y = np.array(y2019["average_playtime"]).reshape(-1,1)
+model.fit(X, y)
+coef = model.coef_
+intercept = model.intercept_
+st.write(f"The coefficient of this best fit line is {coef} and the intercept is {intercept}")
+
 st.markdown("**My last topic is to predict the owners range using the game's price and positive ratings. Before we build the model, let's standardize the data first. (Here we we go back to the original dataframe)**")
 
 from sklearn.preprocessing import StandardScaler
