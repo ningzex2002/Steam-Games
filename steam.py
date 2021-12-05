@@ -75,7 +75,15 @@ chart = alt.Chart(y2019).mark_circle().encode(
     title="Steam Games"
 )
 st.write(chart)
-st.markdown("It seems like there is no obvious association between a game's positive ratings and average playtime :( ")
+st.markdown("It seems like there is no obvious association between a game's positive ratings and average playtime :( But we can also take a look at its best fit linear model!")
+
+chart1 = alt.Chart(y2019).mark_circle().encode(
+    x = "positive_ratings",
+    y = "average_playtime",
+    tooltip = ["name"]
+)
+best_fit = chart1+chart1.transform_regression("positive_ratings","average_playtime").mark_line()
+st.write(best_fit)
 
 st.markdown("**My last topic is to predict the owners range using the game's price and positive ratings. Before we build the model, let's standardize the data first. (Here we we go back to the original dataframe)**")
 
