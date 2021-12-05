@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 11 13:14:12 2021
+
+@author: ningz
+"""
+
+streamlit==1.0.0
+
+numpy==1.20.1
+
+pandas==1.2.4
+
+altair==4.1.0
+
+scikit-learn==0.24.1
